@@ -8,18 +8,18 @@ interface USER {
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    user: { uid: "", photo: "", displayName: "" },
+    user: { uid: "", photoUrl: "", displayName: "" },
   },
   reducers: {
     login: (state, action) => {
       state.user = action.payload;
     },
     logout: (state) => {
-      state.user = { uid: "", photo: "", displayName: "" };
+      state.user = { uid: "", photoUrl: "", displayName: "" };
     },
     updateUserProfile: (state, action: PayloadAction<USER>) => {
       state.user.displayName = action.payload.displayName;
-      state.user.photo = action.payload.photoUrl;
+      state.user.photoUrl = action.payload.photoUrl;
     },
   },
 });

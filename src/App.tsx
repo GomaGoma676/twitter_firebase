@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser, login, logout } from "./features/userSlice";
 import { auth } from "./firebase";
-import Login from "./components/Login";
+import Auth from "./components/Auth";
 import Feed from "./components/Feed";
 
 const App: React.FC = () => {
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         dispatch(
           login({
             uid: authUser.uid,
-            photo: authUser.photoURL,
+            photoUrl: authUser.photoURL,
             displayName: authUser.displayName,
           })
         );
@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Feed />
         </div>
       ) : (
-        <Login />
+        <Auth />
       )}
     </>
   );

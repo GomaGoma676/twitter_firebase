@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateUserProfile } from "../features/userSlice";
-import styles from "./Login.module.css";
+import styles from "./Auth.module.css";
 import { auth, provider, storage } from "../firebase";
 
 import {
@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
+    width: "100%",
     marginTop: theme.spacing(1),
   },
   submit: {
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Login: React.FC = () => {
+const Auth: React.FC = () => {
   const classes = useStyles();
 
   const dispatch = useDispatch();
@@ -305,4 +306,4 @@ const Login: React.FC = () => {
     </Grid>
   );
 };
-export default Login;
+export default Auth;

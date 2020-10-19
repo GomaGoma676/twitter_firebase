@@ -42,7 +42,7 @@ function TweetInput() {
             .getDownloadURL()
             .then(async (url) => {
               await db.collection("posts").add({
-                avatar: user.photo,
+                avatar: user.photoUrl,
                 image: url,
                 text: tweetMsg,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -53,7 +53,7 @@ function TweetInput() {
       );
     } else {
       db.collection("posts").add({
-        avatar: user.photo,
+        avatar: user.photoUrl,
         image: "",
         text: tweetMsg,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -77,7 +77,7 @@ function TweetInput() {
         <div className={styles.tweet_form}>
           <Avatar
             className={styles.tweet_avatar}
-            src={user.photo}
+            src={user.photoUrl}
             onClick={async () => {
               await auth.signOut();
             }}

@@ -75,7 +75,7 @@ const Post: React.FC<PROPS> = (props) => {
   const newComment = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     db.collection("posts").doc(props.postId).collection("comments").add({
-      avatar: user.photo,
+      avatar: user.photoUrl,
       text: comment,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       username: user.displayName,
