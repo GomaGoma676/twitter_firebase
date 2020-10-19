@@ -1,0 +1,88 @@
+.post {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--twitter-background);
+  padding-bottom: 10px;
+}
+.post_avatar {
+  padding: 20px;
+}
+.post_body {
+  flex: 1;
+  padding: 10px;
+}
+.post_header > h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.post_headerUser {
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  margin-right: 12px;
+}
+.post_headerTime {
+  font-size: 14px;
+  color: gray;
+}
+.post_tweet {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.post_tweet > p {
+  color: whitesmoke;
+  font-size: 20px;
+}
+.post_tweetImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.post_tweetImage > img {
+  object-fit: contain;
+  border-radius: 20px;
+  max-height: 250px;
+}
+.post_commentIcon {
+  margin-top: 15px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.post_comment {
+  display: flex;
+  align-items: center;
+  word-break: break-all;
+  margin: 12px;
+}
+.post_commentUser {
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  margin-right: 12px;
+}
+.post_commentText {
+  font-size: 15px;
+  color: whitesmoke;
+  margin-right: 10px;
+}
+.post_form {
+  margin: 40px;
+  position: relative;
+  display: flex;
+}
+.post_input {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.post_button {
+  border: none;
+  color: whitesmoke;
+  background-color: transparent;
+  cursor: pointer;
+}
+.post_buttonDisable {
+  display: none;
+}

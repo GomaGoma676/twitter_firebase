@@ -1,0 +1,22 @@
+.login_toggleMode {
+  cursor: pointer;
+  color: #0000ff;
+}
+.login_modal {
+  text-align: center;
+}
+.login_reset {
+  cursor: pointer;
+}
+.login_hiddenIcon {
+  text-align: center;
+  display: none;
+}
+.login_addIcon {
+  cursor: pointer;
+  color: gray;
+}
+.login_addIconLoaded {
+  cursor: pointer;
+  color: whitesmoke;
+}
