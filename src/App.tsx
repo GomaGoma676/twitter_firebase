@@ -9,7 +9,7 @@ import Feed from "./components/Feed";
 const App: React.FC = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  // https://firebase.google.com/docs/reference/js/firebase.User
+
   useEffect(() => {
     const unSub = auth.onAuthStateChanged((authUser) => {
       if (authUser) {

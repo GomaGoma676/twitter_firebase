@@ -9,26 +9,26 @@ import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 
 function TweetInput() {
   const user = useSelector(selectUser);
-  const [image, setImage] = useState<File | null>(null);
+  const [tweetImage, setTweetImage] = useState<File | null>(null);
   const [tweetMsg, setTweetMsg] = useState("");
 
   const onChangeImageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files![0]) {
-      setImage(e.target.files![0]);
+      setTweetImage(e.target.files![0]);
       e.target.value = "";
     }
   };
   const sendTweet = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (image) {
+    if (tweetImage) {
       const S =
         "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
       const N = 16;
       const randomChar = Array.from(crypto.getRandomValues(new Uint32Array(N)))
         .map((n) => S[n % S.length])
         .join("");
-      const fileName = randomChar + "_" + image.name;
-      const uploadTweetImg = storage.ref(`images/${fileName}`).put(image);
+      const fileName = randomChar + "_" + tweetImage.name;
+      const uploadTweetImg = storage.ref(`images/${fileName}`).put(tweetImage);
       uploadTweetImg.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
         () => {},
@@ -60,7 +60,7 @@ function TweetInput() {
         username: user.displayName,
       });
     }
-    setImage(null);
+    setTweetImage(null);
     setTweetMsg("");
   };
 
@@ -84,17 +84,17 @@ function TweetInput() {
           />
           <input
             className={styles.tweet_input}
-            onChange={(e) => setTweetMsg(e.target.value)}
-            value={tweetMsg}
             placeholder="What's happening?"
             type="text"
             autoFocus
+            value={tweetMsg}
+            onChange={(e) => setTweetMsg(e.target.value)}
           />
           <IconButton>
             <label>
               <AddAPhotoIcon
                 className={
-                  image ? styles.tweet_addIconLoaded : styles.tweet_addIcon
+                  tweetImage ? styles.tweet_addIconLoaded : styles.tweet_addIcon
                 }
               />
               <input
