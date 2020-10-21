@@ -66,14 +66,7 @@ function TweetInput() {
 
   return (
     <>
-      <form
-        onSubmit={sendTweet}
-        onKeyPress={(event) => {
-          if (event.key === "Enter" && !tweetMsg) {
-            event.preventDefault();
-          }
-        }}
-      >
+      <form onSubmit={sendTweet}>
         <div className={styles.tweet_form}>
           <Avatar
             className={styles.tweet_avatar}

@@ -126,14 +126,7 @@ const Post: React.FC<PROPS> = (props) => {
               </div>
             ))}
 
-            <form
-              onSubmit={newComment}
-              onKeyPress={(event) => {
-                if (event.key === "Enter" && !comment) {
-                  event.preventDefault();
-                }
-              }}
-            >
+            <form onSubmit={newComment}>
               <div className={styles.post_form}>
                 <input
                   className={styles.post_input}
@@ -145,6 +138,7 @@ const Post: React.FC<PROPS> = (props) => {
                   }
                 />
                 <button
+                  disabled={!comment}
                   className={
                     comment ? styles.post_button : styles.post_buttonDisable
                   }
