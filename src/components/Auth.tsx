@@ -234,14 +234,14 @@ const Auth: React.FC = () => {
                   ? async () => {
                       try {
                         await signInEmail();
-                      } catch (err) {
+                      } catch (err:any) {
                         alert(err.message);
                       }
                     }
                   : async () => {
                       try {
                         await signUpEmail();
-                      } catch (err) {
+                      } catch (err:any) {
                         alert(err.message);
                       }
                     }
